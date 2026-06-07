@@ -164,8 +164,8 @@
       // 7. sort Exercise
       // Sort the people alphabetically by last name
 
-      const sortedPeople = people.sort();
-      console.log(sortedPeople);
+      // const sortedPeople = people.sort();
+      // console.log(sortedPeople);
 
       // 8. Reduce Exercise
       // Sum up the instances of each of these
@@ -185,6 +185,15 @@
         "car",
         "truck",
       ];
+
+      const modesOfTransport = data.reduce(countModesOfTransport, {});
+
+      function countModesOfTransport(obj, item) {
+        obj[item] = item in obj ? obj[item] + 1 : 1;
+        return obj;
+      }
+
+      console.log(modesOfTransport);
     </script>
   </body>
 </html>
